@@ -1,0 +1,25 @@
+1. h2 database
+
+spring.h2.base.enabled = true       // application.property                
+localhost:8080/h2-console           // url to launch
+jdbc:h2:mem:testdb                  // database name 
+
+
+2. User org.slf4j.logger in java
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+//第一个参数为格式
+logger.info("all users -> {}", list)
+logger.info("id = 1001 -> {}", object)
+
+
+
+
+
+
+3. Change logger level in application.property
+logging.level.root =debug
