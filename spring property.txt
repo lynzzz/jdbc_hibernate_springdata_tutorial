@@ -23,3 +23,16 @@ logger.info("id = 1001 -> {}", object)
 
 3. Change logger level in application.property
 logging.level.root =debug
+
+
+
+
+4. Show jpa sql
+spring.jpa.show-sql = true
+
+
+
+
+5. 
+Hibernate   CRUD : merge, find,         merge, remove
+Spring Data CRUD : save,  findById    , save,  deleteById
