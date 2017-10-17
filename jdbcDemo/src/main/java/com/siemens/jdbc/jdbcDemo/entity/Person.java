@@ -1,22 +1,46 @@
-package com.siemens.jdbc.jdbcDemo;
+package com.siemens.jdbc.jdbcDemo.entity;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+@Entity
+@NamedQuery(name="find_all_persons", query="select p from Person p")
 public class Person {
+	
+	@Id
+	@GeneratedValue
     private long id;
-    private String name;
+	
+	
+	@Column(name="name")
+    private String namestr;
     private String location;
     private Date birth_date;
     
     public Person(){
     	
     }
-	public Person(long id, String name, String location, Date birth_date) {
-		this.id = id;
-		this.name = name;
+    
+	public Person( String name, String location, Date birth_date) {
+		this.namestr = name;
 		this.location = location;
 		this.birth_date = birth_date;
 	}
+	
+	
+	public Person(long id, String name, String location, Date birth_date) {
+		this.id = id;
+		this.namestr = name;
+		this.location = location;
+		this.birth_date = birth_date;
+	}
+	
 	public long getId() {
 		return id;
 	}
@@ -24,10 +48,10 @@ public class Person {
 		this.id = id;
 	}
 	public String getName() {
-		return name;
+		return namestr;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.namestr = name;
 	}
 	public String getLocation() {
 		return location;
@@ -44,7 +68,7 @@ public class Person {
 	}
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + ", location=" + location + ", birth_date=" + birth_date + "]";
+		return "Person [id=" + id + ", name=" + namestr + ", location=" + location + ", birth_date=" + birth_date + "]";
 	}
     
     
