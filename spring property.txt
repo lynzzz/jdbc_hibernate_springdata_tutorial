@@ -21,16 +21,18 @@ logger.info("id = 1001 -> {}", object)
 
 
 
-3. Change logger level in application.property
-logging.level.root =debug
+3. properties
+logging.level.root =debug         Change logger level in application.property
 
 
+// trun statistics on
+spring.jpa.properties.hibernate.generate_statistics=true    
+logging.level.org.hibernate.stat = debug
 
-
-4. Show jpa sql
+// show all queries
 spring.jpa.show-sql = true
-
-
+spring.jpa.properties.hibernate.format_sql=true
+logging.level.org.hibernate.type=trace
 
 
 5. 
