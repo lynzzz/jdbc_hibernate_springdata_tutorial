@@ -1,6 +1,6 @@
 1. h2 database
 
-spring.h2.base.enabled = true       // application.property                
+spring.h2.base.enabled = true       // application.property, 似乎不写这个也可以launch h2            
 localhost:8080/h2-console           // url to launch
 jdbc:h2:mem:testdb                  // database name 
 
@@ -34,5 +34,5 @@ spring.jpa.show-sql = true
 
 
 5. 
-Hibernate   CRUD : merge, find,         merge, remove
+Hibernate   CRUD : merge, find,         merge, remove                   find, merge return person, remove return void
 Spring Data CRUD : save,  findById    , save,  deleteById
