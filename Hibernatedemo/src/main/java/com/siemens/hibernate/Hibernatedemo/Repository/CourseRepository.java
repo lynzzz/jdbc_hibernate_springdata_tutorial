@@ -33,4 +33,21 @@ public class CourseRepository {
     public void deleteById(long id){
     	em.remove(findById(id));
     }
+    
+    public void playwithEntityManager(){
+    	Course c1 = new Course("I");
+    	Course c2 = new Course("II");
+    	
+    	em.persist(c1);
+    	em.persist(c2);
+    	
+    	em.flush();
+    	
+        c1.setName("I updated");
+        c2.setName("II - updated");
+        
+        em.refresh(c1);
+        em.flush();
+    	
+    }
 }
