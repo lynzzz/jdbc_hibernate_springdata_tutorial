@@ -39,7 +39,7 @@ public class HibernatedemoApplication implements CommandLineRunner {
 		// create
 		//logger.info("creating new course -> {}", repo.save(new Course("Javascript")));
 		
-		repo.playwithEntityManager();
+		
 	    
 		
 	}

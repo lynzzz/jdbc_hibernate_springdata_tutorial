@@ -3,10 +3,13 @@ package com.siemens.hibernate.Hibernatedemo.Repository;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.siemens.hibernate.Hibernatedemo.Entity.Course;
+import java.util.*;
 
 @Repository
 @Transactional
@@ -14,6 +17,8 @@ public class CourseRepository {
 
 	@Autowired
 	private EntityManager em;
+	
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
     public Course findById(long id){
     	return em.find(Course.class, id);
@@ -49,5 +54,10 @@ public class CourseRepository {
         em.refresh(c1);
         em.flush();
     	
+    }
+    
+    public void Basic_JPQLQuery(){
+    	     List ret =    em.createQuery("select c from Course c").getResultList();
+    	     logger.info("creating query -> {}", ret);
     }
 }
