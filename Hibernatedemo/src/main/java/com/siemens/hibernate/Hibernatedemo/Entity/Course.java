@@ -1,8 +1,13 @@
 package com.siemens.hibernate.Hibernatedemo.Entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 public class Course {
@@ -10,6 +15,12 @@ public class Course {
     @GeneratedValue
 	private Long id;
     private String name;
+    
+    @CreationTimestamp
+    private LocalDateTime createdDate;
+    
+    @UpdateTimestamp
+    private LocalDateTime updatedDate;
     
     public Course(String name){
     	this.name = name;

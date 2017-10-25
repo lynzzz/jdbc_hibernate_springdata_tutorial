@@ -1,2 +1,2 @@
-insert into course (id, name ) values (10001L, 'Introducton to algorithm');
-insert into course (id, name) values (10002L, 'Operation System');
+insert into course (id, name, created_Date, updated_Date ) values (10001L, 'Introducton to algorithm', sysdate(), sysdate());
+insert into course (id, name, created_Date, updated_Date) values (10002L, 'Operation System',sysdate(), sysdate());
